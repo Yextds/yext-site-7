@@ -1,8 +1,0 @@
-{
-  "$id": "urlWriteback",
-  "$schema": "https://schema.yext.com/config/platform/plugin/v1",
-  "globals": {
-    "YEXT_API_KEY": "b262ae7768eec3bfa53bfca6d48e4000",
-    "FIELD_KEY": "sbx.yext.com"
-  }
-}
