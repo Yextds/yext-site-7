@@ -6,6 +6,7 @@ export const locationInput = <HTMLInputElement>(
 );
 export const searchButton = document.getElementById("search-location-button");
 // export const useMyLocation = document.getElementById("useLocation");
+export const useMyLocation = '';
 export const locationNoun = "Store";
 export const locationNounPlural = "Stores";
 
