@@ -6,7 +6,7 @@ import {
   searchButton,
   useMyLocation
 } from "./locator/constants";
-import { getLocations, getNearestLocationsByString, getUsersLocation } from "./locator/locations";
+import { getLocations, getNearestLocationsByString, getUsersLocation, getDepartments } from "./locator/locations";
 import { getQueryParamsFromUrl } from "./locator/utils";
 import { isLoading } from "./locator/loader";
 // @ts-ignore
@@ -17,33 +17,36 @@ searchButton.addEventListener("click", function () {
   getNearestLocationsByString();
 });
 
+/* 
 useMyLocation.addEventListener("click", function () {
   getUsersLocation();
 });
-
+*/
 window.addEventListener("popstate", function (e) {
-  if (e.state && e.state.queryString) {
+  if (e.state && e.state.queryString) { 
     locationInput.value = e.state.queryString;
     getNearestLocationsByString();
   }
 });
 
-window.addEventListener("load", function () {
+window.addEventListener("load", function () { 
   const params = getQueryParamsFromUrl();
   const queryString = params["q"] || defaultQuery;
   locationInput.value = decodeURI(queryString);
-  getNearestLocationsByString();
+  getNearestLocationsByString();  
 });
 
-
-locationInput.addEventListener("keydown", function (e) {
+locationInput.addEventListener("keydown", function (e) { 
   if (e.key === "Enter") {
    getNearestLocationsByString();
   }
+  
 });
+
 
 if (loadLocationsOnLoad) {
   getLocations();
+  getDepartments();
 }
 
 if (enableAutocomplete) {

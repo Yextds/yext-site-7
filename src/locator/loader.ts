@@ -4,7 +4,7 @@ import {
   locationInput,
   savedFilterId,
 } from "./constants";
-import { renderLocations, renderSearchDetail } from "./locations";
+import { renderLocations, renderSearchDetail, getNearestLocationsByString } from "./locations";
 import { addMarkersToMap, centerOnGeo } from "./map";
 
 export let isLoading = false;
@@ -125,6 +125,19 @@ export function getRequest(request_url, queryString) {
           el.textContent = "";
         });
       stopLoading();
+	  
+	
+	$(".close").click(function () { // alert('Hello');
+		var closeThis = $(this);
+		closeThis.parents('.storelocation-categories').find(".storelocation-available-categories").toggle( function() {
+				if($(this).is(':visible')){
+					closeThis.html('-');
+				}else{
+					closeThis.html('+');
+				}
+		});
+	});
+	  
     })
     .catch((err) => {
       alert("There was an error");

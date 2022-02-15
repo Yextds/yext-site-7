@@ -1,4 +1,36 @@
-
+<div class="w-full flex flex-wrap items-center bg-[#f9f7f5] border border-[#e8e7e2] py-[15px] px-[15px]">
+<div class="text-base font-Futura">Enter a postcode, town or shop name to find a store near you:</div>
+ <div class="input-group relative flex items-stretch ml-auto">
+	<div class="header-section">			
+		  <div class="directions"></div>
+		  <div class="error-text"></div>
+		  <div class="border border-gray-300 shadow-md rounded-lg w-full px-3 py-2 flex items-center focus-within:ring-2 focus-within:ring-blue-400">
+			<input
+			  class="bg-transparent w-full mx-2 focus:outline-none"
+			  type="text"
+			  id="location-input"
+			  placeholder="Enter ZIP Code or Address"
+			  aria-label="E.g. New York"
+			/>
+			<button class="search-bar-icon" aria-label="Search bar icon" id="search-location-button" type="submit" onclick="this.blur();">
+			  {{> icon-search fillColor="#333333"}}
+			</button>
+			<!--<button class="search-location-arrow" title="Search using your current location!" id="useLocation">
+			  {{> icon-location-arrow fillColor="#333333"}}
+			</button>-->
+		  </div>
+		  
+	</div>
+ </div>
+</div>
+<div class="flex w-full justify-space-between py-4">
+				<h4 class="text-base uppercase font-Futura font-normal tracking-tighter 	text-textcolor">STORES</h4>
+				<span class="ml-auto text-[15px] font-Futura font-black location-count"><div class="search-center"></div></span>
+			</div>
+            <div class="w-full flex flex-wrap">
+               <ul class="department-list flex flex-wrap w-full" >
+               </ul>
+            </div>
 <div class="full-width-locator">
   <style>
     .full-width-locator {
@@ -6,30 +38,7 @@
     }
   </style>
   <div class="panel px-2">
-    <div class="header-section">
-        <div class="lp-param lp-param-{$customizationInstanceID}-headline header mt-2">
-            <h1>Locations near you</h1>
-        </div>
-      <div class="directions"></div>
-      <div class="error-text"></div>
-      <div class="border border-gray-300 shadow-md rounded-lg w-full px-3 py-2 flex items-center focus-within:ring-2 focus-within:ring-blue-400">
-        <button class="search-bar-icon" aria-label="Search bar icon" id="search-location-button" type="submit" onclick="this.blur();">
-          {{> icon-search fillColor="#333333"}}
-        </button>
-        <input
-          class="bg-transparent w-full mx-2 focus:outline-none"
-          type="text"
-          id="location-input"
-          placeholder="Enter ZIP Code or Address"
-          aria-label="E.g. New York"
-        />
-        <button class="search-location-arrow" title="Search using your current location!" id="useLocation">
-          {{> icon-location-arrow fillColor="#333333"}}
-        </button>
-      </div>
-
-      <div class="search-center"></div>
-    </div>
+    
     <div class="spinner" style="display: none;">
       <div class="sk-wave">
         <div class="sk-rect sk-rect1"></div>

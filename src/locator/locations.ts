@@ -42,50 +42,66 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
   );
   let cardTitleLinkUrlValue = getValue(locationOptions.cardTitleLinkUrl);
   const hoursValue = getValue(locationOptions.hours);
+  const c_departments = getValue(locationOptions.c_departments);
   const addressValue = getValue(locationOptions.address);
   const phoneNumberValue = getValue(locationOptions.phoneNumber);
   let viewDetailsLinkUrlValue = getValue(locationOptions.viewDetailsLinkUrl);
 
   let html =
-    '<div class="lp-param-results lp-subparam-cardTitle lp-subparam-cardTitleLinkUrl">';
+    '<div class="lp-param-results lp-subparam-cardTitle lp-subparam-cardTitleLinkUrl  ">';
   if (cardTitleLinkUrlValue && cardTitleValue) {
     if (cardTitleLinkUrlValue["url"]) {
       cardTitleLinkUrlValue = cardTitleLinkUrlValue["url"];
     }
-    html += `<div class="name hover:underline hover:font-semibold text-ll-red ">
+    /*html += `<div class="name hover:underline hover:font-semibold text-ll-red ">
       <a href="${cardTitleLinkUrlValue}">
         ${cardTitleValue} 
       </a>
-    </div>`;
+    </div>`;*/
   } else if (cardTitleValue) {
-    html += `<div class="name hover:underline hover:font-semibold text-ll-red ">
+   /* html += `<div class="name hover:underline hover:font-semibold text-ll-red ">
       ${cardTitleValue}
-    </div>`;
+    </div>`;*/
   }
   html += "</div>";
+  
+  let count_index = index;	
+	
+  html += '<h4 class="storelocation-name text-sm font-Futura uppercase font-black text-textblack mb-1 pr-5 pl-16 pt-4">' + cardTitleValue + '</h4>';
 
      if (hoursValue) {
        const offset = getValueFromPath(entityProfile, "timeZoneUtcOffset");
        const parsedOffset = parseTimeZoneUtcOffset(offset);
        html += '<div class="lp-param-results lp-subparam-hours">';
-       html +=
+      /*  html +=
          '<div class="open-now-string">' +
          formatOpenNowString(hoursValue, parsedOffset) +
-         "</div>";
+         "</div>"; */
+		 
+		html += '<div class="storelocation-openCloseTime pr-5 pl-16 pb-4 text-[#928f8c] text-[11px] leading-tight capitalize">';												html += '<ul>';
+		$.each(hoursValue, function (indexh, hour) {
+			
+			
+			html += '<li><strong>';
+			html +=  indexh.toString();
+			html += '</strong>';
+			
+			
+				$.each(hour.openIntervals, function (op, openInterval) {
+					html += openInterval.start+' to '+openInterval.end;
+				});
+			html += '</li>'; 
+		});
+		html += '</ul>';												
+		html += '</div>';
+											
        html += "</div>";
      }
 
-  const localeString = "en-US";
-  html += i18n.addressForCountry({
-    locale: localeString,
-    profile: { address: addressValue },
-    regionAbbr: false,
-    derivedData: { address: addressValue },
-  });
-
-
-  html += '<div class="lp-param-results lp-subparam-phoneNumber">';
-  if (phoneNumberValue) {
+	html += '<div class="address text-[12px] font-normal text-[#928f8c] leading-tight uppercase mb-1 pr-5 pl-16">';
+	html += addressValue.line1 + ', ' + addressValue.city + ', ' + addressValue.region + ', ' + addressValue.postalCode + ', ' + addressValue.countryCode+'<br/>';
+	
+	if (phoneNumberValue) {
     const formattedPhoneNumber = formatPhone(
       phoneNumberValue,
       addressValue.countryCode
@@ -94,6 +110,21 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
       html += '<div class="phone">' + formattedPhoneNumber + "</div>";
     }
   }
+	
+	html += '</div>';
+
+   /* const localeString = "en-US";
+  html += i18n.addressForCountry({
+    locale: localeString,
+    profile: { address: addressValue },
+    regionAbbr: false,
+    derivedData: { address: addressValue },
+  });
+  */
+
+
+  html += '<div class="lp-param-results lp-subparam-phoneNumber">';
+  
   html += "</div>";
 
   const singleLineAddress =
@@ -108,7 +139,7 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
     " " +
     addressValue.postalCode;
 
-  html += `<div class="lp-param-results lp-subparam-getDirectionsLabel">
+ /* html += `<div class="lp-param-results lp-subparam-getDirectionsLabel">
     <div class="link">
       <a target="_blank"
         href="https://www.google.com/maps/dir/?api=1&destination=${singleLineAddress}"
@@ -117,6 +148,25 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
       </a>
     </div>
   </div>`;
+  */
+  
+  
+	html += '<div class="storelocation-categories inline-block w-full">';
+	html += '<p class="uppercase pl-[20px] pt-[7px] pb-[5px] text-xs font-Futura font-normal border-t border-[#efeeeb]" >Departments available in store<a href="javascript:void(0);" class="inline-block icons_small right close text-lg">+</a></p>';
+		if(c_departments.length > 0){
+			html += '<ul class="storelocation-available-categories clear-both  flex flex-wrap"style="display:none;" >';	
+				$.each(c_departments, function (cd,value) {															
+					$('.department-list-item').each(function () {							 
+						  if (value == $(this).data("id")) {
+							html += '<li class="storelocation-category  float-left bg-[#e7e3dd] w-[30%] ml-[2%] uppercase text-[#878381] mb-[10px] pt-[8px] pb-[10px] text-[10px] text-center" >'+$(this).data("name")+'</li>'; 
+						  }
+					});															
+					
+				});
+			html += '</ul>';
+		}
+	html += '</div>';
+  
   html += '<div class="lp-param-results lp-subparam-availability mt-3">';
   html += "</div>";
 
@@ -149,9 +199,13 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
         entityProfile.__distance.distanceKilometers
       )}
     </div></div>`;
+  }else{
+	  html = `<div class="left-column">
+      ${index + 1}.
+    </div>${html}`;
   }
 
-  return `<div id="result-${index}" class="result border">${html}</div>`;
+  return `<div id="result-${index}" class="result border list-group-item w-full border border-[#efeeeb] mb-5 relative ">${html}</div>`;
 }
 
 // Renders each location the the result-list-inner html
@@ -277,6 +331,8 @@ export function renderSearchDetail(geo, visible, total, queryString) {
     "[formattedTotal]",
     formattedTotal
   );
+  
+
 
   [].slice
   .call(document.querySelectorAll(".search-center") || [])
@@ -293,13 +349,63 @@ export function renderSearchDetail(geo, visible, total, queryString) {
 export function getNearestLocationsByString() {
   const queryString = locationInput.value;
   if (queryString.trim() !== "") {
-    var request_url = base_url + "entities/geosearch";
-
+	  
+     var request_url = base_url + "entities/geosearch";
+	// var request_url = base_url + "entities";
+	
     request_url += "?radius=" + radius;
-    request_url += "&location=" + queryString;
-    
+    request_url += "&location=United Kingdom";
+	
+	// console.log(request_url);
+	
+		let filterParameters = {};
+		let filterAnd = {};
+		let filterOr = {};
+		let filter = '';
+		
+		if (queryString) {
+			
+			filterOr = {"$or": [
+				  {"address.line1": {"$contains": queryString}},
+				  {"address.city": {"$contains": queryString}},
+				  {"address.region": {"$contains": queryString}},
+				  {"address.countryCode": {"$contains": queryString}},
+				  {"address.postalCode": {"$contains": queryString}},	
+				  {"name": {"$contains": queryString}}
+				]
+			}; 
+
+		}
+		
+		var ce_departments = [];
+		$('.checkbox_departments').each(function () {							 
+			  if ($(this).is(":checked")) {
+				ce_departments.push($(this).val());
+			  }
+		});
+		
+		if(ce_departments.length > 0){
+			
+			filterAnd = {"$and":[{"c_departments":{"$in": ce_departments}}]};			
+			filterParameters = {...filterOr,...filterAnd};
+				
+			var filterpar = JSON.stringify(filterParameters);
+			filter = encodeURI(filterpar);
+			
+		}else{
+									
+			filterParameters = {...filterOr};				
+			var filterpar = JSON.stringify(filterParameters);
+			filter = encodeURI(filterpar);
+			
+		}
+		
+		if(filter){
+			request_url += "&filter=" + filter;
+		}
+	
     // Uncommon below to limit the number of results to display from the API request
-    // request_url += "&limit=" + limit;
+    request_url += "&limit=" + limit;
     getRequest(request_url, queryString);
   }
   var url = window.location.href;
@@ -325,15 +431,112 @@ function getNearestLatLng(position) {
 }
 
 // Gets a list of locations. Only renders if it's a complete list. This avoids a dumb looking map for accounts with a ton of locations.
+
 export function getLocations() {
-  const request_url =
+  let request_url =
     base_url +
     "entities" +
     "?limit=" +
     limit +
     '&sortBy=[{"name":"ASCENDING"}]';
+	
+	
+		let filterParameters = {};
+		let filterAnd = {};
+		let filterOr = {};
+		
+		const queryString = locationInput.value;
+		 
+		if (queryString) {
+			
+			filterOr = {"$or": [
+				  {"address.line1": {"$contains": queryString}},
+				  {"address.city": {"$contains": queryString}},
+				  {"address.region": {"$contains": queryString}},
+				  {"address.countryCode": {"$contains": queryString}},
+				  {"address.postalCode": {"$contains": queryString}},	
+				  {"name": {"$contains": queryString}}
+				]
+			}; 
+			
+		}
+		
+		var ce_departments = [];
+		$('.checkbox_departments').each(function () {							 
+			  if ($(this).is(":checked")) {
+				ce_departments.push($(this).val());
+			  }
+		});
+		
+		if(ce_departments.length > 0){			
+			filterAnd = {"$and":[{"c_departments":{"$in": ce_departments}}]};
+				
+		}
+		
+		filterParameters = {...filterOr,...filterAnd};
+		var filterpar = JSON.stringify(filterParameters);
+		var filter = encodeURI(filterpar);
+		
+		if(filter){
+			request_url += "&filter=" + filter;
+		}
+	
+	
   getRequest(request_url, null);
 }
+
+
+export function getDepartments() {
+		var baseURL = "https://liveapi-sandbox.yext.com/v2/accounts/me/entities?";
+		var api_key = "b262ae7768eec3bfa53bfca6d48e4000";
+		var vparam = "20181017";   
+		var entityTypes = "ce_departments";    
+		
+		var fullURL =
+			baseURL +
+			"api_key=" +
+			api_key +
+			"&v=" +
+			vparam + 
+			"&entityTypes=" +
+			entityTypes ;
+			
+		[].slice
+			.call(document.querySelectorAll(".location-data") || [])
+			.forEach(function (el) {
+				el.innerHTML = '<div class="col">Loading...</div>';
+			});
+		
+			fetch(fullURL).then(response => response.json()).then(result => {
+			
+				if (!result.errors) {
+							if (result.response.count > 0) {
+								var html = '';
+								$.each(result.response.entities, function (index, entity) {
+
+									html += '<li class="department-list-item w-1/4 mb-4" data-name="' + entity.name + '" data-id="' + entity.meta.id + '" >';
+									html += '<div class="form-check relative"><input class="checkbox_departments absolute top-0 left-0 " type="checkbox" name="c_departments[]" value="' + entity.meta.id + '" id="' + entity.name + '">';
+									html += '<label class="relative pl-7 text-sm font-Futura font-light cursor-pointer" for="' + entity.name + '"> ' + entity.name + '</label>';
+									html += '</li>';
+
+								});
+								$(".department-list").html(html);
+								
+							  $(".checkbox_departments").change(function() {									
+								getLocations();
+							  });
+								
+							} else {
+
+							}
+
+						} else {
+
+				}
+
+			});
+}
+
 
 export function getUsersLocation() {
   if (navigator.geolocation) {

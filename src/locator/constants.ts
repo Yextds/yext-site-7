@@ -1,21 +1,21 @@
-export const limit = 5;
+export const limit = 50;
 export const radius = 300;
 export const defaultQuery = "";
 export const locationInput = <HTMLInputElement>(
   document.getElementById("location-input")
 );
 export const searchButton = document.getElementById("search-location-button");
-export const useMyLocation = document.getElementById("useLocation");
-export const locationNoun = "Locations";
-export const locationNounPlural = "Locations";
+// export const useMyLocation = document.getElementById("useLocation");
+export const locationNoun = "Store";
+export const locationNounPlural = "Stores";
 
 // Live Api query variables
 var script_tag = document.getElementById('js-locator');
 export const liveAPIKey = script_tag.getAttribute('data');
-export const savedFilterId = "";
+export const savedFilterId = "850742026";
 export const entityTypes = "location";
-export const loadLocationsOnLoad = false;
-export const enableAutocomplete = true;
+export const loadLocationsOnLoad = true;
+export const enableAutocomplete = false;
 export const base_url = "https://liveapi-sandbox.yext.com/v2/accounts/me/";
 export const useMiles = true;
 
@@ -66,5 +66,9 @@ export const locationOptions = {
   viewDetailsLinkUrl: {
     value: "/",
     contentSource: "text",
+  },
+  c_departments: {
+    value: "c_departments",
+    contentSource: "FIELD",
   },
 };

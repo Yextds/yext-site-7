@@ -135,11 +135,11 @@ export function addMarkersToMap(locations) {
     contentSource: "FIELD",
   };
   pinStyles = {
-    fill: "#E52222", //default google red
-    stroke: "white",
+    fill: "#7F1B75", //default google red
+    stroke: "#ddd",
     text: "white",
-    fill_selected: "red",
-    stroke_selected: "#E52222",
+    fill_selected: "#7F1B75",
+    stroke_selected: "#7F1B75",
     text_selected: "white",
   };
 
@@ -163,7 +163,12 @@ export function addMarkersToMap(locations) {
     strokeWeight: 1,
     labelOrigin: new google.maps.Point(0, -25),
   };
-
+  
+  // marker_icon  = "/images/googlemap-marker.png";
+  // selected_marker_icon  = "/images/googlemap-marker.png";
+  
+  // console.log(locations);
+  
   for (let index = 0; index < locations.length; index++) {
     const location = locations[index];
     let coordinatesValue = coordinates["value"];
@@ -202,21 +207,30 @@ export function addMarkersToMap(locations) {
       selected_marker.setVisible(false);
 
       bounds.extend(marker.position);
+	  
+		  google.maps.event.addListener(marker, "click", function () {
+			
+				/*
+				const urlToOpen = document.getElementsByClassName("result selected")[0].getElementsByClassName("center-column")[0].getElementsByClassName('lp-param-results lp-subparam-cardTitle lp-subparam-cardTitleLinkUrl')[0];
+				const urlOpen = urlToOpen.getElementsByClassName('name')[0].getElementsByTagName('a')[0].href;
+				window.open(urlOpen);
+				*/
+				/*
+				map.panTo(marker.position);
+				map.setZoom(16);
+				map.setCenter(marker.getPosition());
+				infoWindow.setContent(markerContent);
+				infoWindow.open(map, marker);
+				*/
+		  });
+		  			
+			google.maps.event.addListener(selected_marker, "click", function () { 
+				highlightLocation(index, true, false, marker);
+			});
 
-      google.maps.event.addListener(marker, "click", function () {
-        highlightLocation(index, true, false, marker);
-        const urlToOpen = document.getElementsByClassName("result selected")[0].getElementsByClassName("center-column")[0].getElementsByClassName('lp-param-results lp-subparam-cardTitle lp-subparam-cardTitleLinkUrl')[0].getElementsByClassName('name')[0].getElementsByTagName('a')[0].href;
-        window.open(urlToOpen);
-      });
-
-      google.maps.event.addListener(selected_marker, "click", function () {
-        highlightLocation(index, true, false, marker);
-      });
-
-      google.maps.event.addListener(marker, "mouseover", function () {
-        highlightLocation(index, false, false, marker);
-        
-      });
+			google.maps.event.addListener(marker, "mouseover", function () {			  
+				highlightLocation(index, false, false, marker);						 
+			});
 
       markers.push(marker);
     }
@@ -234,7 +248,7 @@ export function highlightLocation(
   if (!marker) {
     marker = markers[index];
   }
-  if (selectedLocationIndex == index) {
+  if (selectedLocationIndex == index) { 
     // No Change (just center map or scroll)
     if (shouldCenterMap) {
       map.setCenter(marker.position);
@@ -243,7 +257,7 @@ export function highlightLocation(
     if (shouldScrollToRow) {
       scrollToRow(index);
     }
-  } else {
+  } else { 
     const prevIndex = selectedLocationIndex;
     selectedLocationIndex = index;
 
@@ -287,6 +301,34 @@ export function highlightLocation(
     if (shouldCenterMap) {
       map.setCenter(marker.position);
     }
+	
+	
+	var infoWindow = new google.maps.InfoWindow();
+	
+	var $this = $('#result-'+index);
+	// var location_name = $this.data('name');						
+	var storelocationName = $this.find('.storelocation-name').html();
+	var address = $this.find('.address').html();
+	var openCloseTime = $this.find('.storelocation-openCloseTime').html();
+
+
+	var markerContent = '<div class="markerContent w-[350px] text-[#373333]">';
+
+	markerContent += '<div class="nameData text-lg mb-2 font-Futura font-black ">'+storelocationName+'</div>';
+	markerContent += '<div class="addressData float-left w-1/2 pr-3 text-[13px] leading-tight">'+address+'</div>';
+	markerContent += '<div class="openCloseTimeData float-left w-1/2 pl-3 text-[#373333] text-[13px] leading-tight capitalize">'+openCloseTime+'</div>';
+
+	markerContent += '</div>';
+
+	// console.log(markerContent);
+	
+	selectedMarker.addListener("click", () => {
+		map.setZoom(16);
+		map.setCenter(selectedMarker.getPosition());
+		infoWindow.setContent(markerContent);
+		infoWindow.open(map, selectedMarker);
+	});
+	
   }
 }
 
