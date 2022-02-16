@@ -85,11 +85,15 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
 			html += '<li><strong>';
 			html +=  indexh.toString();
 			html += '</strong>';
-			
-			
-				$.each(hour.openIntervals, function (op, openInterval) {
-					html += openInterval.start+' to '+openInterval.end;
-				});
+				
+				if(hour.openIntervals){
+					$.each(hour.openIntervals, function (op, openInterval) {
+						html += openInterval.start+' to '+openInterval.end;
+					});
+				}else{
+					html += 'Closed';
+				}
+				
 			html += '</li>'; 
 		});
 		html += '</ul>';												
@@ -188,7 +192,7 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
   html = `<div class="center-column">${html}</div>`;
 
   // Add left and right column
-  if (entityProfile.__distance) {
+  /*if (entityProfile.__distance) {
     html = `<div class="left-column">
       ${index + 1}.
     </div>
@@ -199,11 +203,11 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
         entityProfile.__distance.distanceKilometers
       )}
     </div></div>`;
-  }else{
+  }else{*/
 	  html = `<div class="left-column">
       ${index + 1}.
     </div>${html}`;
-  }
+  /*}*/
 
   return `<div id="result-${index}" class="result border list-group-item w-full border border-[#efeeeb] mb-5 relative ">${html}</div>`;
 }
@@ -332,7 +336,7 @@ export function renderSearchDetail(geo, visible, total, queryString) {
     formattedTotal
   );
   
-
+  searchDetailMessage = formattedVisible+' results';
 
   [].slice
   .call(document.querySelectorAll(".search-center") || [])
@@ -348,16 +352,16 @@ export function renderSearchDetail(geo, visible, total, queryString) {
 
 export function getNearestLocationsByString() {
   const queryString = locationInput.value;
-  if (queryString.trim() !== "") {
-	  
-     var request_url = base_url + "entities/geosearch";
-	// var request_url = base_url + "entities";
-	
-    request_url += "?radius=" + radius;
-    request_url += "&location=United Kingdom";
+  
+	var request_url = base_url + "entities/geosearch";
+	// var request_url = base_url + "entities";	
+	request_url += "?radius=" + radius;
+	request_url += "&location=United Kingdom";
 	
 	// console.log(request_url);
-	
+  
+  if (queryString.trim() !== "") {
+	  
 		let filterParameters = {};
 		let filterAnd = {};
 		let filterOr = {};
@@ -408,7 +412,7 @@ export function getNearestLocationsByString() {
     request_url += "&limit=" + limit;
     getRequest(request_url, queryString);
   }
-  var url = window.location.href;
+  var url = window.location.href;  
   var myStorage = window.sessionStorage;
   sessionStorage.setItem('query', url);
 }
@@ -439,7 +443,6 @@ export function getLocations() {
     "?limit=" +
     limit +
     '&sortBy=[{"name":"ASCENDING"}]';
-	
 	
 		let filterParameters = {};
 		let filterAnd = {};
@@ -480,8 +483,7 @@ export function getLocations() {
 		if(filter){
 			request_url += "&filter=" + filter;
 		}
-	
-	
+		
   getRequest(request_url, null);
 }
 
