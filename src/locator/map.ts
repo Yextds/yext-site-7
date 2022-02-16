@@ -121,7 +121,7 @@ function changeColor(hex, amt) {
   return "#" + rgb.r + rgb.g + rgb.b;
 }
 
-export function addMarkersToMap(locations) { 
+export function addMarkersToMap(locations) {
   let marker;
   bounds = new google.maps.LatLngBounds();
   for (let index = 0; index < markers.length; index++) {
@@ -231,7 +231,7 @@ export function addMarkersToMap(locations) {
 			google.maps.event.addListener(marker, "mouseover", function () {			  
 				highlightLocation(index, false, false, marker);						 
 			});
-				  
+
       markers.push(marker);
     }
   }
@@ -245,47 +245,18 @@ export function highlightLocation(
   shouldCenterMap,
   marker = null
 ) {
-		
   if (!marker) {
     marker = markers[index];
   }
-  
-	var infoWindow = new google.maps.InfoWindow();
-	
-	var $this = $('#result-'+index);
-	// var location_name = $this.data('name');						
-	var storelocationName = $this.find('.storelocation-name').html();
-	var address = $this.find('.address').html();
-	var openCloseTime = $this.find('.storelocation-openCloseTime').html();
-
-
-	var markerContent = '<div class="markerContent w-[350px] text-[#373333]">';
-
-	markerContent += '<div class="nameData text-lg mb-2 font-Futura font-black ">'+storelocationName+'</div>';
-	markerContent += '<div class="addressData float-left w-1/2 pr-3 text-[13px] leading-tight">'+address+'</div>';
-	markerContent += '<div class="openCloseTimeData float-left w-1/2 pl-3 text-[#373333] text-[13px] leading-tight capitalize">'+openCloseTime+'</div>';
-
-	markerContent += '</div>';
-
-	// console.log(markerContent);
-  
   if (selectedLocationIndex == index) { 
     // No Change (just center map or scroll)
     if (shouldCenterMap) {
-	  map.setZoom(16);	
       map.setCenter(marker.position);
     }
 
     if (shouldScrollToRow) {
       scrollToRow(index);
     }
-	
-	marker.addListener("click", () => {	
-		infoWindow.setContent(markerContent);
-		infoWindow.open(map, marker);
-	});
-	
-	
   } else { 
     const prevIndex = selectedLocationIndex;
     selectedLocationIndex = index;
@@ -307,6 +278,7 @@ export function highlightLocation(
       // Breifly disables mouseevents to prevent infinite mouseover looping for overlapped markers
       
 	  if(prevMarker){
+		  
 		  prevMarker.setClickable(false);
 		  prevMarker.setIcon(marker_icon);
 		  prevMarker.setLabel({
@@ -318,6 +290,7 @@ export function highlightLocation(
 		  setTimeout(function () {
 			prevMarker.setClickable(true);
 		  }, 50);
+	  
 	  }
 	  
 	  
@@ -330,14 +303,33 @@ export function highlightLocation(
       text: String(selectedLocationIndex + 1),
       color: pinStyles.text_selected,
     });
-     // selectedMarker.setZIndex(999);
+    selectedMarker.setZIndex(999);
 
     if (shouldCenterMap) {
       map.setCenter(marker.position);
     }
 	
 	
-	selectedMarker.addListener("click", () => {  
+	var infoWindow = new google.maps.InfoWindow();
+	
+	var $this = $('#result-'+index);
+	// var location_name = $this.data('name');						
+	var storelocationName = $this.find('.storelocation-name').html();
+	var address = $this.find('.address').html();
+	var openCloseTime = $this.find('.storelocation-openCloseTime').html();
+
+
+	var markerContent = '<div class="markerContent w-[350px] text-[#373333]">';
+
+	markerContent += '<div class="nameData text-lg mb-2 font-Futura font-black ">'+storelocationName+'</div>';
+	markerContent += '<div class="addressData float-left w-1/2 pr-3 text-[13px] leading-tight">'+address+'</div>';
+	markerContent += '<div class="openCloseTimeData float-left w-1/2 pl-3 text-[#373333] text-[13px] leading-tight capitalize">'+openCloseTime+'</div>';
+
+	markerContent += '</div>';
+
+	// console.log(markerContent);
+	
+	selectedMarker.addListener("click", () => {
 		map.setZoom(16);
 		map.setCenter(selectedMarker.getPosition());
 		infoWindow.setContent(markerContent);
@@ -360,7 +352,7 @@ function getCustomPinColor(hex) {
       fill: hex,
       stroke: "#fff",
       text: "#fff",
-      // fill_selected: changeColor(hex, 150),
+      fill_selected: changeColor(hex, 150),
       stroke_selected: hex,
       text_selected: "#000",
     };
@@ -370,7 +362,7 @@ function getCustomPinColor(hex) {
       fill: hex,
       stroke: darker,
       text: "#000",
-      // fill_selected: darker,
+      fill_selected: darker,
       stroke_selected: "#fff",
       text_selected: "#fff",
     };
