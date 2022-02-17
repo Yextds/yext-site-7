@@ -1,19 +1,15 @@
 <div class="w-full flex flex-wrap items-center bg-[#f9f7f5] border border-[#e8e7e2] py-[15px] px-[15px]">
-<div class="text-base font-Futura">Enter a postcode, town or shop name to find a store near you:</div>
- <div class="input-group relative flex items-stretch ml-auto">
-	<div class="header-section">			
-		  <div class="directions"></div>
-		  <div class="error-text"></div>
-		  <div class="border border-gray-300 shadow-md rounded-lg w-full px-3 py-2 flex items-center focus-within:ring-2 focus-within:ring-blue-400">
+<div class="text-sm lg:text-base font-Futura">Enter a postcode, town or shop name to find a store near you:</div>
+ <div class="input-group relative flex items-stretch md:ml-auto mt-2 md:mt-0">
+	<div class="header-section p-0">			
+		  <div class="directions m-0"></div>
+		  <div class="error-text p-0"></div>
+		  <div class="input-group relative flex items-stretch ml-auto">
 			<input
-			  class="bg-transparent w-full mx-2 focus:outline-none"
-			  type="text"
-			  id="location-input"
-			  placeholder="Enter ZIP Code or Address"
-			  aria-label="E.g. New York"
-			/>
-			<button class="search-bar-icon" aria-label="Search bar icon" id="search-location-button" type="submit" onclick="this.blur();">
-			  {{> icon-search fillColor="#333333"}}
+			  class="search_key form-control relative flex-auto min-w-0 block w-full px-[10px] py-0 leading-[30px] text-sm text-textcolor font-Futura font-normal text-gray-700 bg-white border border-solid border-[#dddad3] transition ease-in-out m-0 focus:outline-none border-r-0" type="text" id="location-input" placeholder="Enter ZIP Code or Address"
+			  aria-label="E.g. New York"/>
+			<button class="search-bar-icon btn leading-[30px] bg-gradient-to-b from-[#fafaf5] to-[#eae4dd] inline-block px-2 py-0 uppercase text-pink bg-white focus:outline-none focus:ring-0 text-sm transition font-Futura font-black duration-150 ease-in-out flex items-center border border-solid border-[#dddad3]" aria-label="Search bar icon" id="search-location-button" type="submit" onclick="this.blur();">
+			 Go
 			</button>
 			<!--<button class="search-location-arrow" title="Search using your current location!" id="useLocation">
 			  {{> icon-location-arrow fillColor="#333333"}}
@@ -27,17 +23,13 @@
 				<h4 class="text-base uppercase font-Futura font-normal tracking-tighter 	text-textcolor">STORES</h4>
 				<span class="ml-auto text-[15px] font-Futura font-black location-count"><div class="search-center"></div></span>
 			</div>
-            <div class="w-full flex flex-wrap">
-               <ul class="department-list flex flex-wrap w-full" >
-               </ul>
+            <div class="w-full flex flex-wrap lg:pl-10 mb-3">
+               <ul class="department-list flex flex-wrap w-full"> </ul>
             </div>
-<div class="full-width-locator">
-  <style>
-    .full-width-locator {
-      height: calc(100vh - 78px);
-    }
-  </style>
-  <div class="panel px-2">
+
+
+<div class="full-width-locator flex flex-col md:flex-row flex-wrap">
+  <div class="panel px-2 w-full md:w-5/12 lg:w-1/4">
     
     <div class="spinner" style="display: none;">
       <div class="sk-wave">
@@ -48,12 +40,15 @@
         <div class="sk-rect sk-rect5"></div>
       </div>
     </div>
-    <div class="result-list mt-3">
+    <div class="result-list">
       <div class="result-list-inner grid gap-y-1">
       </div>
     </div>
   </div>
-  <div id="map" class="hidden md:block"></div>
+  <div id="map" class="w-full md:w-7/12 lg:w-3/4 h-screen md:h-[650px] md:!sticky top-0"></div>
+
+
+
 </div>
 <div id="js-locator" data={{global.liveApiKey}}>
 </div>

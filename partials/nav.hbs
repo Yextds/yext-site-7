@@ -1,67 +1,457 @@
-<header class="w-full">
-    <div class="flex w-full flex-w justify-between flex-wrap">
+<header class="md:w-full h-[133px] md:h-auto relative bg-white flex flex-col -mr-3 md:mt-0 -ml-3 md:ml-0">
+    <div class="flex w-full flex-w justify-between flex-wrap order-2 md:order-none">
         <div class="flex mt-[16px] mb-[11px]">
             <ul class="flex mr-[15px]">
-                <li class="pr-[9px] border-navbodercolor"><a href="#" class="">Sign In</a></li>
-                <li class="pr-[9px] pl-[9px] border-l-[1px] border-navbodercolor"><a href="#" class="">Register</a></li>
-                <li class="pr-[9px] pl-[9px] border-l-[1px] border-navbodercolor"><a href="#" class="">Contact Us</a></li>
-                <li class="pr-[9px] pl-[9px] border-l-[1px] border-navbodercolor"><span class="welcome-msg flex">Shipping to<a href="#" class="ml-[3px] top-[1px] inline-block relative"><img src="images/flags.jpg" width="16" height="11"></a></span></li>
+                <li class="md:pr-[9px] border-navbodercolor absolute md:relative top-[75px] md:top-0 left-[10px] md:left-0"><a href="#" class="inline-block align-top text-[0] md:text-[11px] w-5 h-5 md:w-auto md:h-auto bg-sprite-mobile bg-user bg-no-repeat md:bg-none">Sign In</a></li>
+                <li class="md:pr-[9px] md:pl-[9px] md:border-l-[1px] border-navbodercolor hidden md:block"><a href="#" class="">Register</a></li>
+                <li class="md:pr-[9px] md:pl-[9px] md:border-l-[1px] border-navbodercolor absolute md:relative top-9 md:top-0 left-9 md:left-0"><a href="#" class="">Contact Us</a></li>
+                <li class="md:pr-[9px] md:pl-[9px] md:border-l-[1px] border-navbodercolor absolute md:relative right-3 md:right-0 top-9 md:top-0"><span class="welcome-msg flex text-[0px] md:text-[11px]">Shipping to<a href="#" class="ml-[3px] top-[1px] inline-block relative"><img src="images/flags.jpg" width="16" height="11"></a></span></li>
             </ul>
-            <ul class="flex">
-                <li><a href="#" class="flex"><span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="14" viewBox="0 0 327.123 466.668">
-                    <path id="Path_1" data-name="Path 1" d="M349.95,46.668c-90.16,0-163.52,73.359-163.52,163.52,0,87.266,149.61,290.73,156.05,299.32a9.152,9.152,0,0,0,7.465,3.824A9.318,9.318,0,0,0,357.5,509.5c6.348-8.586,156.05-212.05,156.05-299.32,0-90.156-73.359-163.52-163.61-163.52Zm0,242.66A79.1,79.1,0,1,1,429.1,210.18,79.171,79.171,0,0,1,349.95,289.328Z" transform="translate(-186.43 -46.664)" fill="#78246f"/>
-                </svg>
-            </span>Store Locator</a></li>
+            <ul class="flex absolute md:relative top-8 md:top-0 left-3 md:left-0">
+                <li><a href="#" class="flex items-center text-[0] md:text-[11px] before:content-[''] before:w-[17px] md:before:w-[10px] before:h-[22px] md:before:h-[14px] before:bg-sprite-mobile md:before:bg-sprite before:bg-no-repeat before:bg-location-mobile md:before:bg-location before:mr-2">Store Locator</a></li>
         </ul>
     </div>
-    <div class="flex mt-[12px] mb-[12px]">
+    <div class="flex mt-[12px] mb-[12px] absolute md:relative top-[60px] md:top-0 left-[100px] md:left-0">
         <div class="flex items-center relative leading-[25px]">
-            <span class="mini-cart-icon"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="25" viewBox="0 0 19.333 22">
-                <g id="Group_1" data-name="Group 1" transform="translate(-560 -949)">
-                    <path id="Path_2" data-name="Path 2" d="M531,971l1.75-22h15.833l1.252,15.744.5,6.256Z" transform="translate(29)" fill="#78246f"/>
-                    <path id="Path_3" data-name="Path 3" d="M537,951h6.875l-1.437,4.125h-3.812Z" transform="translate(29.063)" fill="#fff"/>
-                </g>
-            </svg>
-        </span>
+            <span class="w-[19px] h-[25px] bg-sprite bg-no-repeat bg-cart mr-2"></span>
         <span class="mini-cart-label text-[12px] uppercase font-Futura font-black tracking-[1px] border-r-[1px] border-[#dddad3] leading-[15px] pr-[6px] pl-[7px] mr-[4px]">My Bag</span>
         <span class="mini-cart-empty text-[12px] uppercase font-Futura font-black leading-[15px]">₹ 00.00</span>
     </div>
 </div>
 </div>
-<div class="flex w-full">
-    <div class="primary-logo mb-2 w-1/4">
-        <a href="#"><img src="/images/logo.png" class="max-h-[70px] max-w-auto w-auto" width="161" height="121"></a>
+<div class="flex flex-col md:flex-row w-full order-1 md:order-none">
+    <div class="primary-logo mb-2 text-center md:text-left w-full md:w-1/4">
+        <a href="#"><img src="/images/logo.png" class="max-h-[56px] md:max-h-[70px] max-w-auto w-auto mx-auto md:ml-0" width="161" height="121"></a>
     </div>
-    <div class="w-3/4">
-        <div class="header-search">
-            <form class="relative">
-                <input id="search" type="text" name="q" value="" placeholder="Search products" class="border border-pink leading-[25px] pl-[8px] pr-[25px] w-full" maxlength="128">
-                <input class="absolute top-0 right-0 bottom-0 w-[25px] text-[0px] bg-[url('/images/sprite.png')]" type="submit" value="go">
+    <div class="w-full md:w-3/4 bg-gradient-to-b from-[#fafaf5] to-[#eae4dd] md:bg-none border-t border-b border-[#dddad3] md:border-none">
+        <div class="header-search absolute md:relative -bottom-[2px] md:bottom-0 right-0 w-9/12 md:w-auto">
+            <form class="relative max-w-[504px] ml-auto">
+                <input id="search" type="text" name="q" value="" placeholder="Search products" class="border border-[#dddad3] md:border-pink leading-[30px] md:leading-[25px] pl-[8px] pr-[25px] w-full italic text-xs md:text-sm" maxlength="128">
+                <input class="absolute top-2 md:top-1 right-0 w-[25px] h-[17px] text-[0px] bg-sprite bg-no-repeat bg-search" type="submit" value="go">
             </form>
         </div>
-        <div class="text-right mt-3">
-            <a href="#" class="text-pink font-bold font-Futura font-black text-xs tracking-wider">SAVED</a>
+        <div class="mt-3 inline-block w-5 md:w-full ml-12 md:ml-0">
+            <a href="#" class="flex items-center float-right text-pink font-bold font-Futura font-black text-[0px] md:text-xs tracking-wider before:content-[''] before:w-5 before:h-5 md:before:w-3 md:before:h-3 before:bg-sprite-mobile md:before:bg-sprite before:bg-no-repeat before:bg-heart-mobile md:before:bg-heart md:before:mr-2">SAVED</a>
         </div>
     </div>
 </div>
-<div id="navigation">
+<div id="navigation" class="order-3 md:order-none">
 <nav class="border-t-[1px] border-b-[1px] border-[#e8e7e2]">
-    <label for="menu-toggle" class="cursor-pointer md:hidden block">
+<input type="checkbox" id="menu-toggle" class="opacity-0 absolute top-0 left-0 invisible">
+    <label for="menu-toggle" class="cursor-pointer flex items-center justify-center md:hidden bg-gradient-to-b from-[#fafaf5] to-[#eae4dd] w-3/12 py-1 leading-[22px] -mt-7 border border-r-0 border-[#dddad3]">
         <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
             <title>menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-    </svg>
-</label>
-<ul class="md:flex items-center text-base text-gray-700 text-center pt-4 md:pt-0">
-    <li class="flex-auto"><a class="block no-underline bg-[#ba1519] text-white hover:text-white text-[16px] font-Futura uppercase font-light tracking-[.8px] leading-[39px] border-l-[1px] border-r-[1px] border-[white] pr-[5px] pl-[5px]" href="/">Sale & Offers</a></li>
-    <li class="flex-auto"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] border-l-[1px] border-r-[1px] border-[white] pr-[5px] pl-[5px]" href="/about.html">Women</a></li>
-    <li class="flex-auto"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] border-l-[1px] border-r-[1px] border-[white] pr-[5px] pl-[5px]" href="/about.html">Men</a></li>
-    <li class="flex-auto"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] border-l-[1px] border-r-[1px] border-[white] pr-[5px] pl-[5px]" href="/about.html">Baby</a></li>
-    <li class="flex-auto"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] border-l-[1px] border-r-[1px] border-[white] pr-[5px] pl-[5px]" href="/about.html">Boys</a></li>
-    <li class="flex-auto"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] border-l-[1px] border-r-[1px] border-[white] pr-[5px] pl-[5px]" href="/about.html">Girls</a></li>
-    <li class="flex-auto"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] border-l-[1px] border-r-[1px] border-[white] pr-[5px] pl-[5px]" href="/about.html">Home & Gifts</a></li>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+        <span class="ml-2">Menu</span>
+    </label>
+<ul class="hidden md:flex items-center text-base text-gray-700 md:text-center pt-4 md:pt-0 relative bg-white z-20">
+    <li class="flex-auto group"><a class="block no-underline md:bg-[#ba1519] md:text-white md:hover:text-white text-[16px] font-Futura uppercase font-light tracking-[.8px] leading-[39px] pr-[5px] pl-[5px]  relative z-[11] before:content-[''] before:hidden group-hover:before:block before:absolute before:-top-1 before:left-0 before:right-0 before:-bottom-1 before:-z-[1] before:bg-[#ba1519]" href="/">Sale & Offers</a>
+        <div class="hidden group-hover:flex flex-wrap pt-[10px] pb-[9px] text-left shadow absolute top-full left-0 w-full bg-white border border-[#d4ccc3] z-10 -mt-[1px]">
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Sale</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Shop All Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Womens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Mens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Kids & Teen Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Home & Gifts Sale</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Womens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Jeans</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £35 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £22 Leggings</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Mens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 T-Shirts</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Denim</a></li>
+                </ul>
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">KIDS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Essentials</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Newborn Essentials</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">HOME & GIFTS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Cushions</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Gifting</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    <li class="flex-auto group"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] pr-[5px] pl-[5px] relative z-[11] before:content-[''] before:hidden group-hover:before:block before:absolute before:-top-1 before:left-0 before:right-0 before:-bottom-0 before:-z-[1] before:bg-white before:border before:border-[#d4ccc3] before:border-b-0" href="/about.html">Women</a>
+        <div class="hidden group-hover:flex flex-wrap pt-[10px] pb-[9px] text-left shadow absolute top-full left-0 w-full bg-white border border-[#d4ccc3] z-10 -mt-[1px]">
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Sale</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Shop All Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Womens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Mens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Kids & Teen Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Home & Gifts Sale</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Womens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Jeans</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £35 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £22 Leggings</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Mens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 T-Shirts</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Denim</a></li>
+                </ul>
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">KIDS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Essentials</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Newborn Essentials</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">HOME & GIFTS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Cushions</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Gifting</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    <li class="flex-auto group"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] pr-[5px] pl-[5px] relative z-[11] before:content-[''] before:hidden group-hover:before:block before:absolute before:-top-1 before:left-0 before:right-0 before:-bottom-0 before:-z-[1] before:bg-white before:border before:border-[#d4ccc3] before:border-b-0" href="/about.html">Men</a>
+        <div class="hidden group-hover:flex flex-wrap pt-[10px] pb-[9px] text-left shadow absolute top-full left-0 w-full bg-white border border-[#d4ccc3] z-10 -mt-[1px]">
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Sale</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Shop All Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Womens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Mens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Kids & Teen Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Home & Gifts Sale</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Womens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Jeans</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £35 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £22 Leggings</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Mens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 T-Shirts</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Denim</a></li>
+                </ul>
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">KIDS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Essentials</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Newborn Essentials</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">HOME & GIFTS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Cushions</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Gifting</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    <li class="flex-auto group"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] pr-[5px] pl-[5px] relative z-[11] before:content-[''] before:hidden group-hover:before:block before:absolute before:-top-1 before:left-0 before:right-0 before:-bottom-0 before:-z-[1] before:bg-white before:border before:border-[#d4ccc3] before:border-b-0" href="/about.html">Baby</a>
+        <div class="hidden group-hover:flex flex-wrap pt-[10px] pb-[9px] text-left shadow absolute top-full left-0 w-full bg-white border border-[#d4ccc3] z-10 -mt-[1px]">
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Sale</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Shop All Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Womens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Mens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Kids & Teen Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Home & Gifts Sale</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Womens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Jeans</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £35 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £22 Leggings</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Mens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 T-Shirts</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Denim</a></li>
+                </ul>
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">KIDS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Essentials</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Newborn Essentials</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">HOME & GIFTS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Cushions</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Gifting</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    <li class="flex-auto group"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] pr-[5px] pl-[5px] relative z-[11] before:content-[''] before:hidden group-hover:before:block before:absolute before:-top-1 before:left-0 before:right-0 before:-bottom-0 before:-z-[1] before:bg-white before:border before:border-[#d4ccc3] before:border-b-0" href="/about.html">Boys</a>
+        <div class="hidden group-hover:flex flex-wrap pt-[10px] pb-[9px] text-left shadow absolute top-full left-0 w-full bg-white border border-[#d4ccc3] z-10 -mt-[1px]">
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Sale</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Shop All Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Womens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Mens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Kids & Teen Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Home & Gifts Sale</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Womens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Jeans</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £35 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £22 Leggings</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Mens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 T-Shirts</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Denim</a></li>
+                </ul>
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">KIDS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Essentials</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Newborn Essentials</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">HOME & GIFTS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Cushions</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Gifting</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    <li class="flex-auto group"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] pr-[5px] pl-[5px] relative z-[11] before:content-[''] before:hidden group-hover:before:block before:absolute before:-top-1 before:left-0 before:right-0 before:-bottom-0 before:-z-[1] before:bg-white before:border before:border-[#d4ccc3] before:border-b-0" href="/about.html">Girls</a>
+        <div class="hidden group-hover:flex flex-wrap pt-[10px] pb-[9px] text-left shadow absolute top-full left-0 w-full bg-white border border-[#d4ccc3] z-10 -mt-[1px]">
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Sale</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Shop All Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Womens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Mens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Kids & Teen Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Home & Gifts Sale</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Womens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Jeans</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £35 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £22 Leggings</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Mens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 T-Shirts</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Denim</a></li>
+                </ul>
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">KIDS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Essentials</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Newborn Essentials</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">HOME & GIFTS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Cushions</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Gifting</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    <li class="flex-auto group"><a class="block no-underline hover:text-black text-[16px] font-Futura uppercase text-textcolor font-light tracking-[.8px] leading-[39px] pr-[5px] pl-[5px] relative z-[11] before:content-[''] before:hidden group-hover:before:block before:absolute before:-top-1 before:left-0 before:right-0 before:-bottom-0 before:-z-[1] before:bg-white before:border before:border-[#d4ccc3] before:border-b-0" href="/about.html">Home & Gifts</a>
+        <div class="hidden group-hover:flex flex-wrap pt-[10px] pb-[9px] text-left shadow absolute top-full left-0 w-full bg-white border border-[#d4ccc3] z-10 -mt-[1px]">
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Sale</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Shop All Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Womens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Mens Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Kids & Teen Sale</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">Home & Gifts Sale</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Womens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Jeans</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £35 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £22 Leggings</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">Mens Offers</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Knitwear</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 T-Shirts</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">2 for £40 Denim</a></li>
+                </ul>
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">KIDS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Essentials</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Newborn Essentials</a></li>
+                </ul>
+            </div>
+            <div class="w-1/4 px-[9px] border-r border-[#e8e7e2]">
+                <h3 class="text-sm p-[7px] text-black font-Futura font-light uppercase border-b border-[#86827f]">HOME & GIFTS OFFERS</h3>
+                <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3">
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Cushions</a></li>
+                    <li><a href="#" class="inline-block w-full px-[7px] pt-[2px]">3 for 2 Gifting</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+</ul>
+<ul class="main-menu hidden !md:hidden items-center text-base text-gray-700 pt-4 pl-[10px] pr-[5px] relative bg-white z-20">
+    <li class="relative">
+        <input type="checkbox" name="submenu" class="opacity-0 absolute top-0 left-0 invisible radio-btn" id="sale-menu">
+        <label for="sale-menu" class="text-sm p-[7px] text-black font-Futura font-light uppercase cursor-pointer w-full inline-block border-b border-[#e0ded8] relative">Sale <span class="submenu-toggle absolute top-[13px] right-[15px] w-[11px] h-[11px] bg-sprite-mobile bg-no-repeat bg-plus"></span></label>
+        <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3 w-[96%] ml-[5px] hidden submenu">
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Shop All Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Mens Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Mens Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Kids & Teen Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Kids & Teen Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Home & Gifts Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Home & Gifts Offers</a></li>
+        </ul>
+    </li>
+    <li class="relative">
+        <input type="checkbox" name="submenu" class="opacity-0 absolute top-0 left-0 invisible radio-btn" id="men-menu">
+        <label for="men-menu" class="text-base p-[7px] text-black font-Futura font-light uppercase cursor-pointer w-full inline-block border-b border-[#e0ded8] relative">Men <span class="submenu-toggle absolute top-[13px] right-[15px] w-[11px] h-[11px] bg-sprite-mobile bg-no-repeat bg-plus"></span></label>
+        <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3 w-[96%] ml-[5px] hidden submenu">
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Shop Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">New In</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Dresses & Jumpsuits</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Knitwear</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Knitwear</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Accessories</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Blouses & Shirts</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Brands</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Coats & Jackets</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Jeans</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Khost Clothing</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Lingerie</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Petite</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Plus</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Shoes</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Shorts</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Sonder Studio</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Spirit</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Sweatshirts</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Swimwear & Beachwear</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Tops</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Trousers & Leggings</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">In The Style X Jac Jossa</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Holiday Shop</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">The Edit</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Sale</a></li>
+        </ul>
+    </li>
+    <li class="relative">
+        <input type="checkbox" name="submenu" class="opacity-0 absolute top-0 left-0 invisible radio-btn" id="baby-menu">
+        <label for="baby-menu" class="text-base p-[7px] text-black font-Futura font-light uppercase cursor-pointer w-full inline-block border-b border-[#e0ded8] relative">Baby <span class="submenu-toggle absolute top-[13px] right-[15px] w-[11px] h-[11px] bg-sprite-mobile bg-no-repeat bg-plus"></span></label>
+        <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3 w-[96%] ml-[5px] hidden submenu">
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Shop All Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Mens Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Mens Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Kids & Teen Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Kids & Teen Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Home & Gifts Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Home & Gifts Offers</a></li>
+        </ul>
+    </li>
+    <li class="relative">
+        <input type="checkbox" name="submenu" class="opacity-0 absolute top-0 left-0 invisible radio-btn" id="boys-menu">
+        <label for="boys-menu" class="text-base p-[7px] text-black font-Futura font-light uppercase cursor-pointer w-full inline-block border-b border-[#e0ded8] relative">Boys <span class="submenu-toggle absolute top-[13px] right-[15px] w-[11px] h-[11px] bg-sprite-mobile bg-no-repeat bg-plus"></span></label>
+        <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3 w-[96%] ml-[5px] hidden submenu">
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Shop All Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Mens Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Mens Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Kids & Teen Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Kids & Teen Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Home & Gifts Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Home & Gifts Offers</a></li>
+        </ul>
+    </li>
+    <li class="relative">
+        <input type="checkbox" name="submenu" class="opacity-0 absolute top-0 left-0 invisible radio-btn" id="girls-menu">
+        <label for="boys-menu" class="text-base p-[7px] text-black font-Futura font-light uppercase cursor-pointer w-full inline-block border-b border-[#e0ded8] relative">Girls <span class="submenu-toggle absolute top-[13px] right-[15px] w-[11px] h-[11px] bg-sprite-mobile bg-no-repeat bg-plus"></span></label>
+        <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3 w-[96%] ml-[5px] hidden submenu">
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Shop All Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Mens Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Mens Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Kids & Teen Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Kids & Teen Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Home & Gifts Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Home & Gifts Offers</a></li>
+        </ul>
+    </li>
+    <li class="relative">
+        <input type="checkbox" name="submenu" class="opacity-0 absolute top-0 left-0 invisible radio-btn" id="gifts-menu">
+        <label for="gifts-menu" class="text-base p-[7px] text-black font-Futura font-light uppercase cursor-pointer w-full inline-block border-b border-[#e0ded8] relative">Home & Gifts <span class="submenu-toggle absolute top-[13px] right-[15px] w-[11px] h-[11px] bg-sprite-mobile bg-no-repeat bg-plus"></span></label>
+        <ul class="text-[13px] text-[#4b4744] font-Futura font-light py-3 w-[96%] ml-[5px] hidden submenu">
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Shop All Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Womens Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Mens Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Mens Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Kids & Teen Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Kids & Teen Offers</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Home & Gifts Sale</a></li>
+            <li><a href="#" class="text-[13px] inline-block w-full px-[7px] py-[15px] leading-[18px] border-b border-[#e0ded8] uppercase relative after:content-[''] after:bg-sprite-mobile after:bg-no-repeat after:bg-more after:w-[11px] after:h-[11px] after:absolute after:top-[15px] after:right-0">Home & Gifts Offers</a></li>
+        </ul>
+    </li>
 </ul>
 </nav>
 </div>
-<div class="bg-black text-white text-center font-Futura font-black text-[24px] pt-[20px] pb-[10px] tracking-[2px]">FREE STANDARD DELIVERY ON UK ORDERS OVER £40</div>
 </header>
+<div class="bg-black text-white text-center font-Futura font-black text-sm md:text-lg lg:text-2xl pt-2 md:pt-4 pb-2 md:pb-4 tracking-[2px] mt-[10px]">FREE STANDARD DELIVERY ON UK ORDERS OVER £40</div>

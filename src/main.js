@@ -7,4 +7,5 @@ function importAll(r) {
     return images;
   }
   
-  const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+  const images = importAll(require.context('./images', false, /\.(gif|png|jpe?g)$/));
+  const fonts = importAll(require.context('./fonts', false, /\.(woff|woff2|eot|ttf|svg)$/));

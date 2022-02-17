@@ -1,6 +1,74 @@
 @tailwind base;
 @tailwind components;
 
+@font-face {
+    font-family: 'Futura Std';
+    src: url('fonts/FuturaStd-Condensed.woff2') format('woff2'),
+        url('fonts/FuturaStd-Condensed.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Std';
+    src: url('fonts/FuturaStd-Book.woff2') format('woff2'),
+        url('fonts/FuturaStd-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Std';
+    src: url('fonts/FuturaStd-Heavy.woff2') format('woff2'),
+        url('fonts/FuturaStd-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Std';
+    src: url('fonts/FuturaStd-Light.woff2') format('woff2'),
+        url('fonts/FuturaStd-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Std';
+    src: url('fonts/FuturaStd-Medium.woff2') format('woff2'),
+        url('fonts/FuturaStd-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+.form-check label:before{content:''; position: absolute; top: 0; left: 0; width: 16px; height: 16px; background-color: #fff; border: 1px solid #d4ccc3;}
+.form-check input:checked + label:after{content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    margin-top: -7px;
+    border: none;
+    width: 16px;
+    height: 11px;
+    background: url(images/sprite-account.png) 0 -245px no-repeat;}
+
+.marker-no{background-image: url(images/googlemap-marker.png);}
+.list-group-item.active{background-color: #f9f7f5;}
+.storelocation-available-categories{display:none;}
+
+#menu-toggle:checked ~ .main-menu{display: block;}
+
+.radio-btn:checked ~ .submenu{display: block;}
+.radio-btn:checked ~ label .submenu-toggle{background-position: 0 -314px;}
+
+
+
 
 /* Header Styline */
 
@@ -20,7 +88,6 @@
 #map {
   background-color: #e9ecef;
   flex-grow: 1;
-  width: 100%;
 }
 .search-center {
   margin-top: 1rem;
@@ -38,7 +105,7 @@
 }
 
 .result {
-  padding: 1rem;
+  padding: 1rem 1rem 0.2rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #e9ecef;
   display: flex;
@@ -64,15 +131,15 @@
 .panel {
   display: flex;
   flex-direction: column;
-  @apply bg-gray-50;
-  width: 700px;
+  /* @apply bg-gray-50; */
+  width: 100%;
   overflow: hidden;
 }
 
-.result-list {
+/* .result-list {
   overflow-x: hidden;
 }
-
+ */
 .search-bar {
   display: flex;
 }
@@ -97,7 +164,6 @@
 
 .full-width-locator {
   width: 100%;
-  display: flex;
 }
 
 .spinner {
@@ -110,33 +176,33 @@
 }
 
 .form input {
-  @apply border border-ll-blue w-full block py-1 px-2;
+  /* @apply border border-ll-blue w-full block py-1 px-2; */
 }
 
 .form select {
-  @apply border border-ll-blue w-full block py-1 px-2;
+  /* @apply border border-ll-blue w-full block py-1 px-2; */
 }
 
 /* Body Styling */
 
 body {
-  @apply bg-gray-50 text-ll-blue;
+  /* @apply bg-gray-50 text-ll-blue; */
 }
 
 h1 {
-  @apply text-3xl font-bold;
+  /* @apply text-3xl font-bold; */
 }
 
 h2 {
-  @apply text-2xl font-bold;
+  /* @apply text-2xl font-bold; */
 }
 
 h3 {
-  @apply text-lg font-bold;
+  /* @apply text-lg font-bold; */
 }
 
 h4 {
-  @apply text-lg font-bold;
+  /* @apply text-lg font-bold; */
 }
 
 .hero {
@@ -149,7 +215,7 @@ h4 {
 }
 
 .skeleton {
-  @apply bg-gray-300 animate-pulse rounded-sm;
+  /* @apply bg-gray-300 animate-pulse rounded-sm; */
 }
 
 h2.section-header {
@@ -166,15 +232,15 @@ h2.section-header {
 
 
 .btn-primary {
-  @apply bg-ll-red text-white border-ll-red focus:ring-2 focus:bg-red-900;
+  /* @apply bg-ll-red text-white border-ll-red focus:ring-2 focus:bg-red-900; */
 }
 
 .btn-secondary {
-  @apply text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100;
+  /* @apply text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100; */
 }
 
 .btn-link {
-  @apply hover:bg-gray-100 focus:ring-2 focus:bg-gray-100;
+  /* @apply hover:bg-gray-100 focus:ring-2 focus:bg-gray-100; */
 }
 
 .error-text {
@@ -184,3 +250,6 @@ h2.section-header {
 
 
 @tailwind utilities;
+
+
+

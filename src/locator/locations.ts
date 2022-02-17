@@ -67,7 +67,7 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
   
   let count_index = index;	
 	
-  html += '<h4 class="storelocation-name text-sm font-Futura uppercase font-black text-textblack mb-1 pr-5 pl-16 pt-4">' + cardTitleValue + '</h4>';
+  html += '<h4 class="storelocation-name text-sm font-Futura uppercase font-black text-textblack mb-1 pr-5 pl-10 md:pl-6 lg:pl-16">' + cardTitleValue + '</h4>';
 
      if (hoursValue) {
        const offset = getValueFromPath(entityProfile, "timeZoneUtcOffset");
@@ -78,7 +78,7 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
          formatOpenNowString(hoursValue, parsedOffset) +
          "</div>"; */
 		 
-		html += '<div class="storelocation-openCloseTime pr-5 pl-16 pb-4 text-[#928f8c] text-[11px] leading-tight capitalize">';												html += '<ul>';
+		html += '<div class="storelocation-openCloseTime pr-5 pl-10 md:pl-6 lg:pl-16 pb-4 text-[#928f8c] text-[11px] leading-tight capitalize">';												html += '<ul>';
 		$.each(hoursValue, function (indexh, hour) {
 			
 			
@@ -102,7 +102,7 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
        html += "</div>";
      }
 
-	html += '<div class="address text-[12px] font-normal text-[#928f8c] leading-tight uppercase mb-1 pr-5 pl-16">';
+	html += '<div class="address text-[12px] font-normal text-[#928f8c] leading-tight uppercase mb-1 pr-5 pl-10 md:pl-6 lg:pl-16">';
 	html += addressValue.line1 + ', ' + addressValue.city + ', ' + addressValue.region + ', ' + addressValue.postalCode + ', ' + addressValue.countryCode+'<br/>';
 	
 	if (phoneNumberValue) {
@@ -156,7 +156,7 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
   
   
 	html += '<div class="storelocation-categories inline-block w-full">';
-	html += '<p class="uppercase pl-[20px] pt-[7px] pb-[5px] text-xs font-Futura font-normal border-t border-[#efeeeb]" >Departments available in store<a href="javascript:void(0);" class="inline-block icons_small right close text-lg">+</a></p>';
+	html += '<p class="uppercase flex justify-between items-center pt-[7px] pb-[5px] text-xs font-Futura font-normal border-t border-[#efeeeb]" >Departments available in store<a href="javascript:void(0);" class="inline-block icons_small right close text-[20px]">+</a></p>';
 		if(c_departments.length > 0){
 			html += '<ul class="storelocation-available-categories clear-both  flex flex-wrap"style="display:none;" >';	
 				$.each(c_departments, function (cd,value) {															
@@ -171,7 +171,7 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
 		}
 	html += '</div>';
   
-  html += '<div class="lp-param-results lp-subparam-availability mt-3">';
+  html += '<div class="lp-param-results lp-subparam-availability">';
   html += "</div>";
 
   // if (viewDetailsLinkUrlValue && viewDetailsLinkTextValue) {
@@ -204,7 +204,7 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
       )}
     </div></div>`;
   }else{*/
-	  html = `<div class="left-column">
+	  html = `<div class="left-column absolute top-4 left-2 lg:left-4 w-5 h-8 marker-no bg-no-repeat bg-center text-center leading-[24px] text-white">
       ${index + 1}.
     </div>${html}`;
   /*}*/
@@ -516,8 +516,8 @@ export function getDepartments() {
 								var html = '';
 								$.each(result.response.entities, function (index, entity) {
 
-									html += '<li class="department-list-item w-1/4 mb-4" data-name="' + entity.name + '" data-id="' + entity.meta.id + '" >';
-									html += '<div class="form-check relative"><input class="checkbox_departments absolute top-0 left-0 " type="checkbox" name="c_departments[]" value="' + entity.meta.id + '" id="' + entity.name + '">';
+									html += '<li class="department-list-item w-1/2 sm:w-1/3 md:w-1/4 mb-4" data-name="' + entity.name + '" data-id="' + entity.meta.id + '" >';
+									html += '<div class="form-check relative"><input class="checkbox_departments absolute top-0 left-0 opacity-0 hidden " type="checkbox" name="c_departments[]" value="' + entity.meta.id + '" id="' + entity.name + '">';
 									html += '<label class="relative pl-7 text-sm font-Futura font-light cursor-pointer" for="' + entity.name + '"> ' + entity.name + '</label>';
 									html += '</li>';
 
